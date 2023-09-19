@@ -1,0 +1,1 @@
+# Script to stop all the services.

@@ -1,0 +1,1 @@
+# Script to start all the services.

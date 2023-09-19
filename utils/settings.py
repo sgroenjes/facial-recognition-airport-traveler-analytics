@@ -1,0 +1,1 @@
+# To store configurations like database credentials, API keys, etc.
