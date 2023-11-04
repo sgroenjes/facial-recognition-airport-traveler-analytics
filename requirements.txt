@@ -1,1 +1,4 @@
 opencv-python
+sqlalchemy
+psycopg2
+kafka-python

@@ -4,6 +4,10 @@
 
 This project aims to create a robust and scalable identity verification system for a large international airport. The system combines machine learning techniques such as facial recognition and gait analysis with real-time and historical analytics to identify individuals and flag unauthorized or suspicious activities. 
 
+## Development Board
+
+https://trello.com/b/ksB7nivf/airport-analytics
+
 ## Assumptions
 
 - The system is designed for a large international airport with high footfall.
@@ -20,32 +24,42 @@ This project aims to create a robust and scalable identity verification system f
 - **Monitoring and Alerting**: Grafana (real-time analytics), Kibana (log monitoring)
 - **Security**: SSL/TLS (transmission), AES-256 (storage)
 
-## Setup
+## Setup and Development Workflow
 
-### Phase 1: Hardware and Data Transmission
-- **Cameras**: Multiple IP cameras for comprehensive coverage.
-- **Sensors**: Pressure sensors for gait analysis integrated with IoT devices.
-- **Data Transmission**: Real-time video and sensor data streaming.
+1. **Development Environment Setup**: 
+    - Ensure that all necessary development tools and libraries are installed and configured for each team member.
 
-### Phase 2: Data Ingestion and Preprocessing
-- **Ingestion Engine**: Use Kafka for real-time data and RabbitMQ for task queues.
-- **Preprocessing**: Apply image and video filters to enhance quality.
+2. **Database Initialization**:
+    - Set up the PostgreSQL database with the initial schema.
+    - Implement basic CRUD operations in `db_operations.py`.
 
-### Phase 3: Analytics Engine
-- **Object Detection**: Algorithms like YOLO or SSD for real-time tracking.
-- **Identification**: Facial and gait recognition models trained using TensorFlow.
+3. **Data Ingestion and Preprocessing**:
+    - Develop `video-capture.py` to capture and handle video streams.
+    - Create preprocessing filters in `image_filters.py` to enhance video feed quality.
 
-### Phase 4: Database and Backend Services
-- **Structured Data**: Use PostgreSQL for storing user profiles and other structured data.
-- **Search and Analytics**: Elasticsearch for complex queries and analytics.
-  
-### Phase 5: Monitoring and Alerting
-- **Dashboard**: Use Grafana for real-time dashboards.
-- **Logging**: Kibana for log aggregation and monitoring.
+4. **Analytics Engine Development**:
+    - Populate `identity_recognition.py` with facial recognition capabilities.
+    - Implement object detection in `object_detection.py`.
 
-### Phase 6: Security Measures
-- **Data in Transit**: Use SSL/TLS for secure data transmission.
-- **Data at Rest**: Encrypt stored data using AES-256.
+5. **Monitoring and Alerting**:
+    - Set up Grafana and Kibana for system monitoring and log aggregation.
+
+6. **Service Initialization Scripts**:
+    - Write scripts for initializing and shutting down system services (`init.sh`, `start_services.sh`, `stop_services.sh`).
+
+7. **APIs and User Interface**:
+    - Design and develop backend APIs.
+    - Create a user-friendly dashboard for real-time monitoring and system management.
+
+8. **Security Implementation**:
+    - Set up SSL/TLS for secure data transmission.
+    - Implement AES-256 encryption for data at rest.
+
+9. **Documentation**:
+    - Document the system setup, API usage, and operational procedures.
+
+10. **Testing and Continuous Integration**:
+    - Establish a testing framework and continuous integration process.
 
 ## Usage
 
